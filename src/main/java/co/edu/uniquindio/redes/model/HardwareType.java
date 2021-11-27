@@ -39,6 +39,7 @@ public enum HardwareType {
     PURE_IP(35),
     HW_EXP1(36),
     HW_EXP2(256),
+    AETHERNET(257),
     RESERVED (65535);
 
     private byte code;
