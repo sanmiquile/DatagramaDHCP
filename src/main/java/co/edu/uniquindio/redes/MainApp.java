@@ -25,13 +25,14 @@ public class MainApp {
             0x53, 0x46, 0x54, 0x20, 0x35, 0x2e, 0x30, 0x37, 0x0b, 0x01, 0x0f, 0x03, 0x06, 0x2c, 0x2e, 0x2f, 0x1f, 0x21, (byte) 0xf9, 0x2b, (byte) 0xff, 0x00, 0x00, 0x00,
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
 
-    public static void main(String[] args) throws IOException {
+    public static void main2(String[] args) throws IOException {
 //        Path path = Paths.get("datamagra.dat");
 //        Files.write(path,data);
 
         if( args.length > 0 ) {
             Path path = Paths.get(args[0]);
             data = Files.readAllBytes(path);
+            String texto = new String(data);
         }
 
         DHCPMessage dhcpMessage = new DHCPMessage(data);

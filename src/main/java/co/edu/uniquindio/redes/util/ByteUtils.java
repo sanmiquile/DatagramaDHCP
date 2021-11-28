@@ -46,4 +46,12 @@ public final class ByteUtils {
         return String.format("%d.%d.%d.%d",toUnsignedInt(data[0]),toUnsignedInt(data[1]),toUnsignedInt(data[2]),toUnsignedInt(data[3]));
     }
 
+    public static byte[] stringToByteArray(String text){
+        text=text.replace(" ","").replace("\n","").replace("\r","");
+        byte[] data = new byte[text.length()/2];
+        for(int i = 0, j = 0 ; i < data.length ; i++,j+=2 ){
+            data[i] = (byte) Integer.parseInt( text.substring(j,j+2) ,16 );
+        }
+        return data;
+    }
 }
