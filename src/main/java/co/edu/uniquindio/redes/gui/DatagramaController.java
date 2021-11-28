@@ -14,56 +14,35 @@ import co.edu.uniquindio.redes.model.DataFrame;
 public class DatagramaController {
     @FXML
     private TextArea datagramaText;
+    @FXML
+    private TextArea resultadoText;
 
     @FXML
     private void  leerDatagrama(){
-
 
         byte[] data= ByteUtils.stringToByteArray(datagramaText.getText());
 
 
         DHCPMessage dhcpMessage = new DHCPMessage(data);
 
-        System.out.println( "Mac destino"+ dhcpMessage.getDestinationMacAddress() );
-
-        System.out.println( "Mac fuente"+ dhcpMessage.getSourceMacAddress() );
-
-        System.out.println("ip fuente "+dhcpMessage.getSourceAddressIP());
-
-        System.out.println("ip destino "+dhcpMessage.getDestinationAddressIP());
-
-        System.out.println("puerto origen "+dhcpMessage.getSourcePort());
-
-        System.out.println("puerto destino "+dhcpMessage.getDestinationPort());
-
-        System.out.println("longitud udp "+dhcpMessage.getUDPSegmentLength());
-
-        System.out.println("longitud dhcp "+dhcpMessage.getLength());
-        System.out.println("Tipo mensaje dhcp "+dhcpMessage.getMessageType());
-        System.out.println("Tipo hardware "+dhcpMessage.getHardwareType());
-        System.out.println("Tamaño de la dirección de hardware "+dhcpMessage.getHlen());
-        System.out.println("XID "+dhcpMessage.getXidString());
-        System.out.println("IP cliente "+dhcpMessage.getClientAddressIPString());
-        System.out.println("IP SU "+dhcpMessage.getSuAddressIPString());
-        System.out.println("Hardware Address Client "+dhcpMessage.getHardwareClientAddressString());
-        System.out.println("Magic Cokkie "+dhcpMessage.getMagicCokkie());
+        resultadoText.setText( "Mac destino: "+ dhcpMessage.getDestinationMacAddress() +
+                "\nip fuente: "+dhcpMessage.getSourceAddressIP()+
+                "\nip destino: "+dhcpMessage.getDestinationAddressIP()+
+                "\npuerto origen "+dhcpMessage.getSourcePort()+
+                "\npuerto destino "+dhcpMessage.getDestinationPort()+
+                "\nlongitud udp "+dhcpMessage.getUDPSegmentLength()+
+                "\nlongitud dhcp "+dhcpMessage.getLength()+
+                "\nTipo mensaje dhcp "+dhcpMessage.getMessageType()+
+                "\nTipo hardware "+dhcpMessage.getHardwareType()+
+                "\nTamaño de la dirección de hardware "+dhcpMessage.getHlen()+
+                "\nXID "+dhcpMessage.getXidString()+
+                "\nIP cliente "+dhcpMessage.getClientAddressIPString()+
+                "\nIP SU "+dhcpMessage.getSuAddressIPString()+
+                "\nHardware Address Client "+dhcpMessage.getHardwareClientAddressString()+
+                "\nMagic Cokkie "+dhcpMessage.getMagicCokkie());
 
         dhcpMessage.getOptions().stream().map(DHCPOption::toString).forEach(System.out::println);
 
-
-
-
-
-
-
-
-       /*
-        String vistaActiva = "/fxml/resultadoData.fxml";
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(vistaActiva));
-        ScrollPane ventana = loader.load();
-        DatragamaController controller = loader.getController();
-
-        */
 
 
     }

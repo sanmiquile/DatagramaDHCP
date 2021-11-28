@@ -47,7 +47,7 @@ public final class ByteUtils {
     }
 
     public static byte[] stringToByteArray(String text){
-        text=text.replaceAll(" ","");
+        text=text.replace(" ","").replace("\n","").replace("\r","");
         byte[] data = new byte[text.length()/2];
         for(int i = 0, j = 0 ; i < data.length ; i++,j+=2 ){
             data[i] = (byte) Integer.parseInt( text.substring(j,j+2) ,16 );

@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="579.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.redes.gui.DatagramaController">
+<AnchorPane prefHeight="580.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.redes.gui.DatagramaController">
    <children>
-      <Label fx:id="datagramaLabel" layoutX="222.0" layoutY="81.0" prefHeight="43.0" prefWidth="168.0" text="Ingrese o carge el texto  " />
-      <Button layoutX="138.0" layoutY="354.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="96.0" text="Cargar Archivo" />
-      <Button layoutX="331.0" layoutY="354.0" mnemonicParsing="false" onAction="#leerDatagrama" prefHeight="43.0" prefWidth="113.0" text="Analizar" />
-      <TextArea fx:id="datagramaText" layoutX="47.0" layoutY="138.0" prefHeight="200.0" prefWidth="517.0" />
+      <Label fx:id="datagramaLabel" layoutX="143.0" layoutY="30.0" prefHeight="43.0" prefWidth="261.0" text="Ingrese o carge el texto  ">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Button layoutX="122.0" layoutY="457.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="96.0" text="Cargar Archivo" />
+      <Button layoutX="309.0" layoutY="457.0" mnemonicParsing="false" onAction="#leerDatagrama" prefHeight="43.0" prefWidth="113.0" text="Analizar" />
+      <TextArea fx:id="datagramaText" layoutX="14.0" layoutY="84.0" prefHeight="356.0" prefWidth="489.0" />
+      <TextArea fx:id="resultadoText" layoutX="525.0" layoutY="84.0" prefHeight="454.0" prefWidth="461.0" style="-fx-control-inner-background:#000000; -fx-font-family: Consolas; -fx-highlight-fill: #00ff00; -fx-highlight-text-fill: #000000; -fx-text-fill: #fb7e00; " text="(Texto Prueba)" />
+      <Label fx:id="datagramaLabel1" layoutX="691.0" layoutY="30.0" prefHeight="43.0" prefWidth="96.0" text="Resultado" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
