@@ -27,21 +27,21 @@ public class DatagramaController {
 
         StringBuilder resultado = new StringBuilder();
 
-        resultado.append( "Direccion MAC destino: "+ dhcpMessage.getDestinationMacAddress() +
-                "\nDireccion MAC origen: "+ dhcpMessage.getSourceMacAddress()+
-                "\nDireccion IP origen: "+dhcpMessage.getSourceAddressIP()+
-                "\nDireccion IP destino: "+dhcpMessage.getDestinationAddressIP()+
-                "\nNumero de puerto origen: "+dhcpMessage.getSourcePort()+
-                "\nNumero de puerto destino: "+dhcpMessage.getDestinationPort()+
+        resultado.append( "Dirección MAC destino: "+ dhcpMessage.getDestinationMacAddress() +
+                "\nDirección MAC origen: "+ dhcpMessage.getSourceMacAddress()+
+                "\nDirección IP origen: "+dhcpMessage.getSourceAddressIP()+
+                "\nDirección IP destino: "+dhcpMessage.getDestinationAddressIP()+
+                "\nNúmero de puerto origen: "+dhcpMessage.getSourcePort()+
+                "\nNúmero de puerto destino: "+dhcpMessage.getDestinationPort()+
                 "\nLongitud del segmento UDP: "+dhcpMessage.getUDPSegmentLength()+
                 "\nLongitud del mensaje DHCP: "+dhcpMessage.getLength()+
                 "\nTipo mensaje DHCP: "+dhcpMessage.getMessageType()+
                 "\nTipo hardware de red: "+dhcpMessage.getHardwareType()+
-                "\nTamaño de la direccion de hardware: "+dhcpMessage.getHlen()+
-                "\nIdentificador de la transaccion: "+dhcpMessage.getXidString()+
-                "\nDireccion IP cliente: "+dhcpMessage.getClientAddressIPString()+
-                "\nSu direccion IP: "+dhcpMessage.getSuAddressIPString()+
-                "\nDireccion Hardware Cliente: "+dhcpMessage.getHardwareClientAddressString()+
+                "\nTamaño de la dirección de hardware: "+dhcpMessage.getHlen()+
+                "\nIdentificador de la transacción: "+dhcpMessage.getXidString()+
+                "\nDirección IP cliente: "+dhcpMessage.getClientAddressIPString()+
+                "\nSu dirección IP: "+dhcpMessage.getSuAddressIPString()+
+                "\nDirección Hardware Cliente: "+dhcpMessage.getHardwareClientAddressString()+
                 "\nMagic Cokkie: "+dhcpMessage.getMagicCokkie());
 
         resultado.append("\nOpciones: \n");

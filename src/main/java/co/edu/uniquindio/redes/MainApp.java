@@ -32,6 +32,7 @@ public class MainApp {
         if( args.length > 0 ) {
             Path path = Paths.get(args[0]);
             data = Files.readAllBytes(path);
+            String texto = new String(data);
         }
 
         DHCPMessage dhcpMessage = new DHCPMessage(data);

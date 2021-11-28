@@ -8,7 +8,7 @@ public final class DHCPOptionFactory {
     public static DHCPOption create(DHCPOptionType type){
         return switch (type) {
             case HOST_NAME -> new BasicValueStringOption(type);
-            case PARAMETER_REQUEST_LIST -> new BasicValueNumberListOption(type);
+            case PARAMETER_REQUEST_LIST -> new ParameterRequestListOption();
             case CLIENT_IDENTIFIER -> new ClientIdentifierOption(type);
             case IP_ADDRESS_LEASE_TIME -> new BasicValueNumberOption(type);
             case ROUTER, SUBNET_MASK, DOMAIN_SERVER, SERVER_IDENTIFIER, REQUEST_IP_ADDRESS -> new BasicValueIpOption(type);
