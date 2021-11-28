@@ -25,24 +25,29 @@ public class DatagramaController {
 
         DHCPMessage dhcpMessage = new DHCPMessage(data);
 
-        resultadoText.setText( "Mac destino: "+ dhcpMessage.getDestinationMacAddress() +
-                "\nip fuente: "+dhcpMessage.getSourceAddressIP()+
-                "\nip destino: "+dhcpMessage.getDestinationAddressIP()+
-                "\npuerto origen "+dhcpMessage.getSourcePort()+
-                "\npuerto destino "+dhcpMessage.getDestinationPort()+
-                "\nlongitud udp "+dhcpMessage.getUDPSegmentLength()+
-                "\nlongitud dhcp "+dhcpMessage.getLength()+
-                "\nTipo mensaje dhcp "+dhcpMessage.getMessageType()+
-                "\nTipo hardware "+dhcpMessage.getHardwareType()+
-                "\nTamaño de la dirección de hardware "+dhcpMessage.getHlen()+
-                "\nXID "+dhcpMessage.getXidString()+
-                "\nIP cliente "+dhcpMessage.getClientAddressIPString()+
-                "\nIP SU "+dhcpMessage.getSuAddressIPString()+
-                "\nHardware Address Client "+dhcpMessage.getHardwareClientAddressString()+
-                "\nMagic Cokkie "+dhcpMessage.getMagicCokkie());
+        StringBuilder resultado = new StringBuilder();
 
-        dhcpMessage.getOptions().stream().map(DHCPOption::toString).forEach(System.out::println);
+        resultado.append( "Direccion MAC destino: "+ dhcpMessage.getDestinationMacAddress() +
+                "\nDireccion MAC origen: "+ dhcpMessage.getSourceMacAddress()+
+                "\nDireccion IP origen: "+dhcpMessage.getSourceAddressIP()+
+                "\nDireccion IP destino: "+dhcpMessage.getDestinationAddressIP()+
+                "\nNumero de puerto origen: "+dhcpMessage.getSourcePort()+
+                "\nNumero de puerto destino: "+dhcpMessage.getDestinationPort()+
+                "\nLongitud del segmento UDP: "+dhcpMessage.getUDPSegmentLength()+
+                "\nLongitud del mensaje DHCP: "+dhcpMessage.getLength()+
+                "\nTipo mensaje DHCP: "+dhcpMessage.getMessageType()+
+                "\nTipo hardware de red: "+dhcpMessage.getHardwareType()+
+                "\nTamaño de la direccion de hardware: "+dhcpMessage.getHlen()+
+                "\nIdentificador de la transaccion: "+dhcpMessage.getXidString()+
+                "\nDireccion IP cliente: "+dhcpMessage.getClientAddressIPString()+
+                "\nSu direccion IP: "+dhcpMessage.getSuAddressIPString()+
+                "\nDireccion Hardware Cliente: "+dhcpMessage.getHardwareClientAddressString()+
+                "\nMagic Cokkie: "+dhcpMessage.getMagicCokkie());
 
+        resultado.append("\nOpciones: \n");
+        dhcpMessage.getOptions().stream().map(DHCPOption::toString).forEach(resultado::append);
+
+        resultadoText.setText(resultado.toString());
 
 
     }

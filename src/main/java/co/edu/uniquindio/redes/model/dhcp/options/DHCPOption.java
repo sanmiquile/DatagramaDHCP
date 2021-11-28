@@ -52,13 +52,14 @@ public class DHCPOption {
     public String toString(){
         String format = """
                 {
-                    data: %s
+                    data: %s,
+                    code: %d,
                     option: "%s",
                     length: %d,
                     value: %s
                 }
                 """;
-        return String.format(format,getData(),dhcpOptionType.toString(),length,
+        return String.format(format,getData(),Byte.toUnsignedInt(dhcpOptionType.getCode()),dhcpOptionType.toString(),length,
                 (value == null ?
                         "null"
                         :valueToString()
