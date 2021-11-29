@@ -10,6 +10,10 @@ import javafx.scene.control.TextArea;
 import co.edu.uniquindio.redes.util.ByteUtils;
 import co.edu.uniquindio.redes.model.DataFrame;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 
 public class DatagramaController {
     @FXML
@@ -52,6 +56,15 @@ public class DatagramaController {
 
     }
 
+    @FXML
+    private void  leerArchivo() {
+
+        Path path = Paths.get(args[0]);
+        data = Files.readAllBytes(path);
+        String texto = new String(data);
+
+    }
 
 
-}
+
+    }
