@@ -55,7 +55,7 @@ public class DatagramaController {
 
 
     }
-
+/*
     @FXML
     private void  leerArchivo() {
 
@@ -65,6 +65,6 @@ public class DatagramaController {
 
     }
 
-
+      */
 
     }
