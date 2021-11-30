@@ -14,7 +14,7 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
-      <Button layoutX="122.0" layoutY="457.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="96.0" text="Cargar Archivo" />
+      <Button layoutX="122.0" layoutY="457.0" mnemonicParsing="false" onAction="#leerArchivo" prefHeight="43.0" prefWidth="150.0" text="Cargar Archivo" />
       <Button layoutX="309.0" layoutY="457.0" mnemonicParsing="false" onAction="#leerDatagrama" prefHeight="43.0" prefWidth="113.0" text="Analizar" />
       <TextArea fx:id="datagramaText" layoutX="14.0" layoutY="84.0" prefHeight="356.0" prefWidth="489.0" />
       <TextArea fx:id="resultadoText" layoutX="525.0" layoutY="84.0" prefHeight="454.0" prefWidth="461.0" style="-fx-control-inner-background:#000000; -fx-font-family: Consolas; -fx-highlight-fill: #00ff00; -fx-highlight-text-fill: #000000; -fx-text-fill: #fb7e00; " />
